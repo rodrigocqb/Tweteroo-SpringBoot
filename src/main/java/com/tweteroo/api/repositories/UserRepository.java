@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.tweteroo.api.models.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findFirstByUsername(String username);
+    User findByUsername(String username);
 }
