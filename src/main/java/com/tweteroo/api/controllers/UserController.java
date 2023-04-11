@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tweteroo.api.dto.UserDTO;
 import com.tweteroo.api.services.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/sign-up")
 public class UserController {
@@ -17,7 +19,7 @@ public class UserController {
     private UserService service;
 
     @PostMapping
-    public String create(@RequestBody UserDTO req) {
+    public String create(@RequestBody @Valid UserDTO req) {
         service.create(req);
         return "OK";
     }
